@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="gemStore">
+  <head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="products.js"></script>
+    <style>
+    ul {list-style-type: none;padding-left: 0px;}
+    img{max-width: 100%;
+    height: auto;}
+    </style>
+  </head>
+  <body ng-controller="StoreController as store">
+    <!--  Store Header  -->
+    <header>
+      <h1 class="text-center">Manjil Ratna Store</h1>
+      <h4 class="text-center">– a small Angular store –</h2>
+    </header>
+
+    <!--  Products Container  -->
+    <div class="container">
+      <div class="list-group">
+        <!--  Product Container  -->
+        <div class="list-group-item" ng-repeat="product in store.products">
+          <h3>{{product.name}} <em class="pull-right">{{product.price | currency}}</em></h3>
+
+          <!-- Image Gallery  -->
+          <product-gallery></product-gallery>
+
+          <!-- Product Tabs  -->
+          <product-tabs></product-tabs>
+        </div>
+
+      </div>
+    </div>
+
+  </body>
+</html>
